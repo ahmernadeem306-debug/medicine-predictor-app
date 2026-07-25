@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -10,16 +9,16 @@ import requests
 from bs4 import BeautifulSoup
 
 # ===== 1. PAGE SETUP - DARK PRO =====
-st.set_page_config(page_title="Live Medicine AI Predictor PK", layout="wide", page_icon="💊")
+st.set_page_config(page_title="Live Medicine AI Predictor PK", layout="wide")
 st.markdown("""
 <style>
-  .stApp {background-color: #0E1117; color: white;}
+ .stApp {background-color: #0E1117; color: white;}
     h1, h2, h3 {color: #00FF88!important;}
-   .stButton>button {background-color: #00FF88; color: black;}
+  .stButton>button {background-color: #00FF88; color: black;}
 </style>
 """, unsafe_allow_html=True)
 
-st.title("💊 Live Medicine Price Predictor | Pakistan")
+st.title("Live Medicine Price Predictor | Pakistan")
 st.markdown("**Real-Time Scraping + Supervised ML** | Data updates every time you refresh")
 
 # ===== 2. REAL-TIME SCRAPING FUNCTION =====
@@ -59,7 +58,7 @@ col1, col2 = st.columns([1,2])
 
 with col1:
     medicine = st.selectbox("Select Medicine", list(models.keys()))
-    if st.button("🔄 Refresh Live Data"):
+    if st.button("Refresh Live Data"):
         st.cache_data.clear()
         st.rerun()
 
